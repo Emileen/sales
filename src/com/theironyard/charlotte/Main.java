@@ -71,10 +71,10 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 
         Server.createWebServer().start();
-        HashMap model = new HashMap();
+       // HashMap model = new HashMap();
 
         Spark.get("/", (request, response) -> {
-            //HashMap model = new HashMap();
+            HashMap model = new HashMap();
             Session session = request.session();
 
             User current = getUserById(session.attribute("user"));
@@ -82,9 +82,10 @@ public class Main {
             if (current != null) {
                 // pass user into model
                 model.put("user", current);
-
                 return new ModelAndView(model, "home.html");
-            } else {
+            }
+            else{
+
                 return new ModelAndView(model, "login.html");
 
             }
@@ -102,30 +103,16 @@ public class Main {
             if (userId != null) {
                 Session session = request.session();
                 session.attribute("user", userId);
-            } else {
-                User.insertUser(getConnection(), name, email);
-            }
+            } //else {
+               // User.insertUser(getConnection(), name, email);
+            //}
             response.redirect("/");
             return "";
         });
 
-       /* Spark.get("/login",
-                (request, response) -> {
-            User.insertUser(getConnection(),request.queryParams("name"),request.queryParams("email"));
-            return new ModelAndView(model,"")
-                });*/
-
         initializeDatabase();
 
-        Spark.post(
-                "/logout",
-                ((request, response) -> {
-                    Session session = request.session();
-                    session.invalidate();
-                    response.redirect("/");
-                    return "";
-                })
-        );
+
 
         Spark.get("/registration",
                 (request, response) -> {
@@ -137,6 +124,24 @@ public class Main {
                     return new ModelAndView(m, "registration.html");
 
                 }, new MustacheTemplateEngine());
+
+        Spark.post("/registration",
+                (request, response) -> {
+                    User.insertUser(getConnection(),request.queryParams("name"),request.queryParams("email"));
+                    response.redirect("/");
+                    return "";
+
+        });
+
+        Spark.post(
+                "/logout",
+                ((request, response) -> {
+                    Session session = request.session();
+                    session.invalidate();
+                    response.redirect("/");
+                    return "";
+                })
+        );
 
     }
 
