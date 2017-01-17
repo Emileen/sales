@@ -6,20 +6,31 @@
 </head>
 <body>
 
-<h1>lets check to see if you exist</h1>
+<h1>Welcome to Shoppers World</h1>
 
-<form action ="/login" method="post">
+<form method="post" action="/login">
+
+    <label for ="name">Name:</label>
+    <input type="text" placeholder ="Enter name"  id= name name="name">
+
+    <input type="email" name="email" required placeholder="Email Address" />
+    <input type="submit" />
+</form>
+
+
+<!--
+<form action ="/registration" method="get">
     Name:
     <input type="text" placeholder ="Enter your name" name="name"/>
     Email:
     <input type="email" placeholder = "Enter your email" name="email">
 
     <input type="submit"/>
+
+
 </form>
-<!--<form method="post" action="/login">
-    <input type="email" name="email" required placeholder="Email Address" />
-    <input type="submit" />
-</form>-->
+-->
+
 
 </body>
 </html>

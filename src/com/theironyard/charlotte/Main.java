@@ -17,6 +17,7 @@ public class Main {
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:h2:./main");
     }
+
     private static void initializeDatabase() throws SQLException {
         Statement stmt = getConnection().createStatement();
         stmt.execute("create table if not exists users  (id identity, name varchar, email varchar)");
@@ -68,10 +69,12 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
+
         Server.createWebServer().start();
+        HashMap model = new HashMap();
 
         Spark.get("/", (request, response) -> {
-            HashMap model = new HashMap();
+            //HashMap model = new HashMap();
             Session session = request.session();
 
             User current = getUserById(session.attribute("user"));
@@ -99,23 +102,41 @@ public class Main {
             if (userId != null) {
                 Session session = request.session();
                 session.attribute("user", userId);
-            }else{
+            } else {
                 User.insertUser(getConnection(), name, email);
-                //return new ModelAndView(m, "login.html");
-
             }
-            response.redirect("/registration");
+            response.redirect("/");
             return "";
         });
 
+       /* Spark.get("/login",
+                (request, response) -> {
+            User.insertUser(getConnection(),request.queryParams("name"),request.queryParams("email"));
+            return new ModelAndView(model,"")
+                });*/
+
         initializeDatabase();
 
-        Spark.get("/registration",
+        Spark.post(
+                "/logout",
                 ((request, response) -> {
-            HashMap m = new HashMap();
-            return new ModelAndView(m,"registration.html");
+                    Session session = request.session();
+                    session.invalidate();
+                    response.redirect("/");
+                    return "";
+                })
+        );
 
-        }), new MustacheTemplateEngine());
+        Spark.get("/registration",
+                (request, response) -> {
+                    HashMap m = new HashMap();
+                    String email = request.queryParams("email");
+                    String name = request.queryParams("name");
+                    User.insertUser(getConnection(), name, email);
+
+                    return new ModelAndView(m, "registration.html");
+
+                }, new MustacheTemplateEngine());
 
     }
 
