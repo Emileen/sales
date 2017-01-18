@@ -1,5 +1,9 @@
 package com.theironyard.charlotte;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  * Created by emileenmarianayagam on 1/16/17.
  */
@@ -67,4 +71,14 @@ public class Item {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+
+    public static void Insertitem(Connection conn, Item item) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO items VALUES (NULL, ?, ?, ?, ?)");
+        stmt.setString(1, item.name);
+        stmt.setInt(2, item.quantity);
+        stmt.setDouble(3, item.price);
+        stmt.setInt(4, item.orderId);
+        stmt.execute();
+    }
+
 }

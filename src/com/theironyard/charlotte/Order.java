@@ -8,18 +8,21 @@ import java.util.List;
 public class Order {
     private int id;
     private int userId;
+    private boolean complete;
     private List<Item> items;
 
     public Order() {
     }
 
-    public Order(int userId) {
-        this.userId = userId;
-    }
-
-    public Order(int id, int userId) {
+    public Order(int id, int userId, boolean complete) {
         this.id = id;
         this.userId = userId;
+        this.complete = complete;
+    }
+
+    public Order(int userId, boolean complete) {
+        this.userId = userId;
+        this.complete = complete;
     }
 
     public int getId() {
@@ -45,4 +48,6 @@ public class Order {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+
 }
