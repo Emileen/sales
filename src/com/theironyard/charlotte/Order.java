@@ -41,6 +41,14 @@ public class Order {
         this.userId = userId;
     }
 
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
+    }
+
     public List<Item> getItems() {
         return items;
     }

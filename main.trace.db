@@ -1,4 +1,4 @@
-2017-01-18 04:21:47 jdbc[5]: null
+2017-01-18 05:51:48 jdbc[18]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -10,7 +10,8 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
 	at java.sql.DriverManager.getConnection(DriverManager.java:270)
 	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
-	at com.theironyard.charlotte.Main.lambda$main$3(Main.java:166)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
 	at spark.RouteImpl$1.handle(RouteImpl.java:58)
 	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
 	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
@@ -30,8 +31,507 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.lang.Thread.run(Thread.java:745)
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 28 more
-2017-01-18 04:34:27 jdbc[7]: null
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:51:48 jdbc[18]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at com.theironyard.charlotte.Main.getConnection(Main.java:18)
+	at com.theironyard.charlotte.Main.getUserById(Main.java:55)
+	at com.theironyard.charlotte.Main.lambda$main$4(Main.java:180)
+	at spark.RouteImpl$1.handle(RouteImpl.java:58)
+	at spark.webserver.MatcherFilter.doFilter(MatcherFilter.java:162)
+	at spark.webserver.JettyHandler.doHandle(JettyHandler.java:61)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:119)
+	at org.eclipse.jetty.server.Server.handle(Server.java:517)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:302)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:242)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:245)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:75)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceAndRun(ExecuteProduceConsume.java:213)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:147)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+2017-01-18 05:57:20 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+select top 1 * from orders where user_id = ? and open = true [90012-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:109)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:179)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-18 05:57:47 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+select * from orders where user_id = ? and open = true [90012-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:109)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:179)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-18 05:57:48 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+select * from orders where user_id = ? and open = true [90012-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:109)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:179)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -50,7 +550,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:34:27 jdbc[7]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -69,7 +569,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:34:27 jdbc[7]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -88,7 +588,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:34:27 jdbc[7]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -107,27 +607,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:35:08 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM ORDERS  
-SELECT[*] * FROM ORDERS"; SQL statement:
-SELECT * FROM ORDERS  
-SELECT * FROM ORDERS [42000-191]
-2017-01-18 04:35:14 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM ORDERS  
-SELECT[*] * FROM USERS"; SQL statement:
-SELECT * FROM ORDERS  
-SELECT * FROM USERS [42000-191]
-2017-01-18 04:35:15 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM ORDERS  
-SELECT[*] * FROM USERS"; SQL statement:
-SELECT * FROM ORDERS  
-SELECT * FROM USERS [42000-191]
-2017-01-18 04:36:14 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM USERS  
-SELECT[*] * FROM ITEMS"; SQL statement:
-SELECT * FROM USERS  
-SELECT * FROM ITEMS [42000-191]
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -146,7 +626,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -165,7 +645,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -184,7 +664,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -203,7 +683,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -222,7 +702,7 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
+2017-01-18 06:19:57 jdbc[13]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
@@ -241,101 +721,3 @@ org.h2.message.DbException: The connection was not closed by the application and
 Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.get(DbException.java:179)
-	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:72)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
-	at org.h2.server.web.WebApp.login(WebApp.java:955)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
-	at org.h2.server.web.WebThread.process(WebThread.java:133)
-	at org.h2.server.web.WebThread.run(WebThread.java:89)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.get(DbException.java:179)
-	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:72)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
-	at org.h2.server.web.WebApp.login(WebApp.java:955)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
-	at org.h2.server.web.WebThread.process(WebThread.java:133)
-	at org.h2.server.web.WebThread.run(WebThread.java:89)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.get(DbException.java:179)
-	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:72)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
-	at org.h2.server.web.WebApp.login(WebApp.java:955)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
-	at org.h2.server.web.WebThread.process(WebThread.java:133)
-	at org.h2.server.web.WebThread.run(WebThread.java:89)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.get(DbException.java:179)
-	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:72)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
-	at org.h2.server.web.WebApp.login(WebApp.java:955)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
-	at org.h2.server.web.WebThread.process(WebThread.java:133)
-	at org.h2.server.web.WebThread.run(WebThread.java:89)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 14 more
-2017-01-18 04:52:39 jdbc[14]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.get(DbException.java:179)
-	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:72)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
-	at org.h2.server.web.WebApp.login(WebApp.java:955)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
-	at org.h2.server.web.WebThread.process(WebThread.java:133)
-	at org.h2.server.web.WebThread.run(WebThread.java:89)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-191]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 14 more
-2017-01-18 04:53:09 jdbc[14]: exception
-org.h2.jdbc.JdbcSQLException: Table "ITEM" not found; SQL statement:
-SELECT * FROM item [42102-191]

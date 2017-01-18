@@ -25,11 +25,10 @@ public class Item {
         this.orderId = orderId;
     }
 
-    public Item(String name, int quantity, double price, int orderId) {
+    public Item(String name, int quantity, double price) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-        this.orderId = orderId;
     }
 
     public int getId() {

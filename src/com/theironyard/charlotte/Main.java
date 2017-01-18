@@ -21,7 +21,7 @@ public class Main {
     private static void initializeDatabase() throws SQLException {
         Statement stmt = getConnection().createStatement();
         stmt.execute("create table if not exists users  (id identity, name varchar, email varchar)");
-        stmt.execute("create table if not exists orders (id identity, user_id int, complete boolean)");
+        stmt.execute("create table if not exists orders (id identity, user_id int, open boolean)");
         stmt.execute("create table if not exists items  (id identity, name varchar, quantity int, price double, order_id int)");
     }
 
@@ -77,25 +77,25 @@ public class Main {
         return userId;
     }
 
-    private static Order getLatestCurrentOrder(Integer userId) throws SQLException {
+    private static Order getLatestCurrentOrder(User user) throws SQLException {
+        //getting the current order
+        // order is null
         Order order = null;
-        if (userId != null) {
-            PreparedStatement stmt = getConnection().prepareStatement("select top 1 * from orders where user_id = ? and complete = false");
-            stmt.setInt(1,userId);
+            PreparedStatement stmt = getConnection().prepareStatement("select top 1 * from orders where user_id = ? and open = true");
+            stmt.setInt(1,user.getId());
             ResultSet results = stmt.executeQuery();
             if (results.next()) {
                 order = new Order(results.getInt("id"),
                         results.getInt("user_id"),
-                        false);
+                        true);
             }
-        }
         return order;
     }
 
-    private static int insertOrder(int userId) throws SQLException {
+    private static int insertOrder(Order order) throws SQLException {
         PreparedStatement stmt = getConnection().prepareStatement("insert into orders values (NULL, ?,?)", Statement.RETURN_GENERATED_KEYS);
-        stmt.setInt(1, userId);
-        stmt.setBoolean(2,false);
+        stmt.setInt(1, order.getUserId());
+        stmt.setBoolean(2,order.isComplete());
         stmt.executeUpdate();
         ResultSet keys =  stmt.getGeneratedKeys();
         keys.next();
@@ -174,7 +174,6 @@ public class Main {
 
         //trys to enter the order that the person has into the table
         Spark.post("/add-item", (request, response) -> {
-            Session session = request.session();
 
             //see if the user has a valid order
             User currentUser = getUserById(request.session().attribute("user"));
@@ -182,25 +181,23 @@ public class Main {
             //if there is a seesion
             if (currentUser != null) {
                 // see if there is a current order
-                Order currentOrder = getLatestCurrentOrder(currentUser.getId());
+                Order currentOrder = getLatestCurrentOrder(currentUser);
 
                 if (currentOrder == null) {
                     // if not, make a new one
-                    currentOrder = new Order(currentUser.getId(),true);
-                    int orderId = insertOrder(currentUser.getId());
-
+                    currentOrder = new Order(currentUser.getId(), true);
+                    insertOrder(currentOrder);
+                }
 
                     // get item from post data
-                    Item postedItem = new Item(request.queryParams("name"),
+                    insertItem(getConnection(), new Item(request.queryParams("name"),
                             Integer.valueOf(request.queryParams("quantity")),
-                            Double.valueOf(request.queryParams("price")),
-                                    orderId);
+                            Double.valueOf(request.queryParams("price"))));
 
                     // add item to order
-                    insertItem(getConnection(), postedItem);
 
                 }
-            }
+
 
             // redirect
             response.redirect("/");
