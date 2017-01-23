@@ -31,7 +31,9 @@ public class Main {
         // so on and so forth.
         return new ArrayList<>();
     }
-/*    private static List<Item> getOrdersForUser(Connection conn, Integer userId) throws SQLException {
+
+    
+ /*  private static List<Item> getOrdersForUser(Connection conn, Integer userId) throws SQLException {
         ArrayList<Item> items = new ArrayList<>();
         PreparedStatement stmt = getConnection().prepareStatement("select * from orders where user_id = ?");
         stmt.setInt(1,userId);
@@ -204,10 +206,10 @@ public class Main {
             return "";
         });
 
-        Spark.get("/item",(request, response) -> {
+        Spark.get("/add-item",(request, response) -> {
             HashMap m = new HashMap();
 
-            return new ModelAndView(m,"order.html");
+            return new ModelAndView(m,"home.html");
         });
 
         Spark.post(
